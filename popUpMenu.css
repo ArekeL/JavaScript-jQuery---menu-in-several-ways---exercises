@@ -10,12 +10,12 @@
   font-family: Arial, Helvetica, sans-serif;
   border: 2px solid black;
   border-radius: 50%;
+  transition: .3s linear;
 }
 
 .burger:hover {
   cursor: pointer;
   transform: rotate(405deg);
-  transition: .3s linear;
 }
 
 aside {
