@@ -2,20 +2,11 @@
   position: absolute;
   top: 40px;
   right: 40px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
   line-height: 50px;
   font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  border: 2px solid black;
-  border-radius: 50%;
   transition: .3s linear;
 }
 
-.burger.active {
-  transform: rotate(405deg);
-}
 
 .burger:hover {
   cursor: pointer;
@@ -31,10 +22,15 @@ aside {
   transition: .3s linear;
 }
 
-.burger.active+aside {
-  left: 0;
+.fas {
+  display: none;
+  color: gray;
 }
 
-/* .burger:hover+aside {
+i.show {
+  display: block;
+}
+
+aside.show {
   left: 0;
-} */
+}
