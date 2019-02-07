@@ -1,0 +1,46 @@
+body {
+  min-height: 200vh;
+}
+
+.wrapper {
+  margin: 10px 70px;
+
+}
+
+.wrapper p {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 200%;
+}
+
+.burger {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  font-size: 40px;
+  z-index: 1;
+  transition: .2s linear;
+}
+
+i.off {
+  display: none;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 30vh;
+  background-color: black;
+  transition: .2s linear;
+
+}
+
+nav.off {
+  top: -30vh;
+}
+
+i.fa-angle-up {
+  color: white;
+}
