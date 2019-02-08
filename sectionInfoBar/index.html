@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Skrolowanie - efekt w JQ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .sekcja1 {
+      background-color: rgb(32, 139, 143);
+      height: 70vh;
+    }
+
+    .sekcja2 {
+      background-color: rgb(10, 34, 10);
+      height: 500px;
+
+    }
+
+    .sekcja3 {
+      background-color: rgb(167, 46, 106);
+      height: 1290px;
+    }
+
+    .sekcja4 {
+      background-color: rgb(102, 43, 28);
+      height: 150vh;
+    }
+
+    .info {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      height: 70px;
+      width: 100%;
+      box-shadow: 0 0 3px 3px grey;
+      background-color: rgb(200, 200, 200);
+      font-size: 30px;
+      line-height: 70px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="sekcja1"></section>
+  <section class="sekcja2"></section>
+  <section class="sekcja3"></section>
+  <section class="sekcja4"></section>
+  <div class="info">WITAJ NA STRONIE</div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    function changeText() {
+      const scrollSize = $(window).scrollTop();
+
+      const heightSec1 = $('.sekcja1').height();
+      const heightSec2 = $('.sekcja2').height();
+      const heightSec3 = $('.sekcja3').height();
+      const heightSec4 = $('.sekcja4').height();
+
+      const distanceFromTopSec1 = $('.sekcja1').offset().top;
+      const distanceFromTopSec2 = $('.sekcja2').offset().top;
+      const distanceFromTopSec3 = $('.sekcja3').offset().top;
+      const distanceFromTopSec4 = $('.sekcja4').offset().top;
+
+      if (scrollSize < heightSec1) {
+        $('.info').text('sekcja 1')
+      } else if (scrollSize < heightSec2 + distanceFromTopSec2) {
+        $('.info').text('sekcja 2')
+      } else if (scrollSize < heightSec3 + distanceFromTopSec3) {
+        $('.info').text('sekcja 3')
+      } else
+        $('.info').text('sekcja 4');
+    }
+
+
+
+    $(window).on('scroll', changeText)
+  </script>
+</body>
+
+</html>
