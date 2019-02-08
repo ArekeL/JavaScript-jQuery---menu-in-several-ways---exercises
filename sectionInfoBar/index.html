@@ -58,32 +58,64 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
+    // JavaScript
+
+    const txt = document.querySelector('div.info');
+
     function changeText() {
-      const scrollSize = $(window).scrollTop();
 
-      const heightSec1 = $('.sekcja1').height();
-      const heightSec2 = $('.sekcja2').height();
-      const heightSec3 = $('.sekcja3').height();
-      const heightSec4 = $('.sekcja4').height();
+      const scrollSize = window.scrollY;
 
-      const distanceFromTopSec1 = $('.sekcja1').offset().top;
-      const distanceFromTopSec2 = $('.sekcja2').offset().top;
-      const distanceFromTopSec3 = $('.sekcja3').offset().top;
-      const distanceFromTopSec4 = $('.sekcja4').offset().top;
+      const heightSec1 = document.querySelector('.sekcja1').clientHeight;
+      const heightSec2 = document.querySelector('.sekcja2').clientHeight;
+      const heightSec3 = document.querySelector('.sekcja3').clientHeight;
+      const heightSec4 = document.querySelector('.sekcja4').clientHeight;
+
+      const distanceFromTopSec1 = document.querySelector('.sekcja1').offsetTop;
+      const distanceFromTopSec2 = document.querySelector('.sekcja2').offsetTop;
+      const distanceFromTopSec3 = document.querySelector('.sekcja3').offsetTop;
+      const distanceFromTopSec4 = document.querySelector('.sekcja4').offsetTop;
 
       if (scrollSize < heightSec1) {
-        $('.info').text('sekcja 1')
+        txt.textContent = 'sekcja 1'
       } else if (scrollSize < heightSec2 + distanceFromTopSec2) {
-        $('.info').text('sekcja 2')
+        txt.textContent = 'sekcja 2'
       } else if (scrollSize < heightSec3 + distanceFromTopSec3) {
-        $('.info').text('sekcja 3')
+        txt.textContent = 'sekcja 3'
       } else
-        $('.info').text('sekcja 4');
+        txt.textContent = 'sekcja 4'
     }
 
+    (window).addEventListener('scroll', changeText)
+
+    // jQuery
+
+    // function changeText() {
+    //   const scrollSize = $(window).scrollTop();
+
+    //   const heightSec1 = $('.sekcja1').height();
+    //   const heightSec2 = $('.sekcja2').height();
+    //   const heightSec3 = $('.sekcja3').height();
+    //   const heightSec4 = $('.sekcja4').height();
+
+    //   const distanceFromTopSec1 = $('.sekcja1').offset().top;
+    //   const distanceFromTopSec2 = $('.sekcja2').offset().top;
+    //   const distanceFromTopSec3 = $('.sekcja3').offset().top;
+    //   const distanceFromTopSec4 = $('.sekcja4').offset().top;
+
+    //   if (scrollSize < heightSec1) {
+    //     $('.info').text('sekcja 1')
+    //   } else if (scrollSize < heightSec2 + distanceFromTopSec2) {
+    //     $('.info').text('sekcja 2')
+    //   } else if (scrollSize < heightSec3 + distanceFromTopSec3) {
+    //     $('.info').text('sekcja 3')
+    //   } else
+    //     $('.info').text('sekcja 4');
+    // }
 
 
-    $(window).on('scroll', changeText)
+
+    // $(window).on('scroll', changeText)
   </script>
 </body>
 
